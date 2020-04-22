@@ -40,8 +40,8 @@ def main():
 			k[i,j] = gaussian_kernel(x1, x2)
 			#print(x1)
 
-	O = np.ones((n,n))/n
-	Ktilde = k - np.matmul(k, O) - np.matmul(O,k) + np.matmul(O, np.matmul(k, O))
+	kO = np.ones((n,n))/n
+	Ktilde = k - np.matmul(k, kO) - np.matmul(kO,k) + np.matmul(kO, np.matmul(k, kO))
 
 	ytilde = y-y.mean(axis=0,keepdims = True)
 
